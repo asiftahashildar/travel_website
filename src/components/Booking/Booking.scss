@@ -1,0 +1,31 @@
+.booking-container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to right, #e3f2fd, #ffffff);
+  min-height: 100vh;
+}
+
+.booking-form-paper {
+  width: 100%;
+  max-width: 800px;
+  padding: 2rem;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+}
+
+.booking-title {
+  color: #0d47a1;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.vehicles-list {
+  width: 100%;
+  max-width: 1200px;
+  padding: 1rem;
+}

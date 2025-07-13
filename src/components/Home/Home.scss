@@ -1,0 +1,94 @@
+.home {
+  .hero {
+    position: relative;
+    height: 100vh;
+    background-image: url('../../assets/images/car.jpg');
+    background-size: cover;
+    background-position: center;
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      // background-color: rgba(0, 0, 0, 0.4); // dark overlay
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 2rem;
+    }
+
+    .hero-title {
+      color: #ffffff;
+      font-size: 3.5rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    }
+
+    .hero-subtitle {
+      color: #ffff;
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin-top: 1rem;
+    }
+  }
+
+  .destinations-carousel {
+    background-color: #F9F3EF;
+    padding: 3rem 1rem;
+    text-align: center;
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #0D5EA6;
+      margin-bottom: 2rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .carousel {
+      padding: 1rem;
+    }
+
+    .card--title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #444;
+    }
+  }
+
+  .details--container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    padding: 3rem 2rem;
+    background-image: url('../../assets/images/car3.jpg');
+    background-size: cover;
+    background-position: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+
+    .details-card {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 1rem;
+      padding: 2rem;
+      width: 300px;
+
+      ul {
+        padding: 0;
+        list-style: none;
+        li {
+          font-size: 0.95rem;
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      p, li {
+        font-family: 'Roboto', sans-serif;
+        color: #333;
+      }
+    }
+  }
+}

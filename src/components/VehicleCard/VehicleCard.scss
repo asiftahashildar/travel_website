@@ -1,0 +1,97 @@
+.vehicle-card {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  height: 100%;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .vehicle-image {
+    width: 260px;
+    height: 240px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  .vehicle-content {
+    flex: 1;
+    padding: 1rem;
+
+    .truncate-text {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+  }
+
+  // ✅ Responsive layout for mobile and tablet
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .vehicle-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .vehicle-content {
+      padding: 0.8rem;
+    }
+  }
+}
+
+.modal-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  width: 95%;
+  max-width: 480px;
+  max-height: 95vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+  .modal-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  ul {
+    padding-left: 1.2rem;
+    margin-top: 0.5rem;
+
+    li {
+      margin-bottom: 0.4rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+
+    .modal-image {
+      height: 160px;
+    }
+
+    ul {
+      padding-left: 1rem;
+    }
+  }
+}
+

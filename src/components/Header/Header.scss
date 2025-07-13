@@ -1,0 +1,136 @@
+.header-bar {
+  .toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #0D5EA6;
+    }
+
+    .nav-labels {
+      display: flex;
+      gap: 1.2rem;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      label {
+        color: #0D5EA6;
+        font-weight: 600;
+        cursor: pointer;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #FE4F2D;
+        }
+      }
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-family: 'Montserrat', sans-serif;
+
+      .MuiButton-root {
+        color: #0D5EA6;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 13px;
+
+        &.active {
+          border-bottom: 2px solid #0D5EA6;
+        }
+      }
+
+      .booking-button {
+        background-color: #0D5EA6;
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: 600;
+        padding: 6px 14px;
+        border-radius: 20px;
+        border: none;
+        transition: background 0.3s ease;
+        white-space: nowrap;
+
+        &:hover {
+          background-color: #084b8a;
+        }
+      }
+    }
+  }
+
+  // 📱 Tablet and below
+  @media (max-width: 768px) {
+    .toolbar {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+
+      .logo {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .nav-labels {
+        justify-content: flex-start;
+        font-size: 13px;
+        gap: 0.8rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: space-between;
+        .MuiButton-root {
+          font-size: 12px;
+        }
+
+        .booking-button {
+          font-size: 12px;
+          padding: 5px 12px;
+        }
+      }
+    }
+  }
+
+  // 📱 Mobile (extra small)
+  @media (max-width: 480px) {
+    .toolbar {
+      padding: 0.8rem;
+
+      .logo {
+        font-size: 1.3rem;
+      }
+
+      .nav-labels {
+        font-size: 12px;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+
+        .MuiButton-root {
+          font-size: 11px;
+        }
+
+        .booking-button {
+          padding: 5px 10px;
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
