@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import {
   AppBar,
   Toolbar,
@@ -20,12 +20,24 @@ const Header = () => {
   const isMobile = useMediaQuery('(max-width:768px)');
   const [drawerOpen, setDrawerOpen] = useState(false);
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+    const scrollAndClose = () => {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+      setDrawerOpen(false);
+    };
+
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(scrollAndClose, 200); // wait for page load
+    } else {
+      scrollAndClose();
     }
-    setDrawerOpen(false);
   };
 
   const toggleDrawer = () => {
@@ -34,7 +46,7 @@ const Header = () => {
 
   const renderMobileDrawer = (
     <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer}>
-      <div style={{ width: 220, padding: '1rem', color:'#0D5EA6', fontSize: '0.8rem' }}>
+      <div style={{ width: 220, padding: '1rem', color: '#0D5EA6', fontSize: '0.8rem' }}>
         <List>
           <ListItem button onClick={() => scrollToSection('contact')}>
             <ListItemText primary="Contact us" />
@@ -52,45 +64,45 @@ const Header = () => {
 
   return (
     <>
- <AppBar position="static" className="header-bar">
-  <Toolbar className="toolbar">
-    {/* LEFT - LOGO */}
-    <Typography className="logo">
-      <img src="/images/logo.png" alt="Logo" width={130} height={60} />
-    </Typography>
+      <AppBar position="static" className="header-bar">
+        <Toolbar className="toolbar">
+          {/* LEFT - LOGO */}
+          <Typography className="logo">
+            <img src="/images/logo.png" alt="Logo" width={130} height={60} />
+          </Typography>
 
-    {/* CENTER - NAV LABELS (only desktop) */}
-    {!isMobile && (
-      <div className="nav-labels">
-        <label onClick={() => scrollToSection('contact')}>Contact us</label>
-        <label onClick={() => scrollToSection('services')}>Services</label>
-        <label onClick={() => scrollToSection('about')}>About us</label>
-      </div>
-    )}
+          {/* CENTER - NAV LABELS (only desktop) */}
+          {!isMobile && (
+            <div className="nav-labels">
+              <label onClick={() => scrollToSection('contact')}>Contact us</label>
+              <label onClick={() => scrollToSection('services')}>Services</label>
+              <label onClick={() => scrollToSection('about')}>About us</label>
+            </div>
+          )}
 
-    {/* RIGHT - DESKTOP BUTTONS OR HAMBURGER */}
-    <div className="header-right">
-      {!isMobile ? (
-        <div className="nav-links">
-          <Button className="booking-button" component={Link} to="/">Home</Button>
-          <Button className="booking-button" component={Link} to="/booking">Booking</Button>
-        </div>
-      ) : (
-        <IconButton onClick={toggleDrawer}>
-          <MenuIcon sx={{ color: '#0D5EA6' }} />
-        </IconButton>
-      )}
-    </div>
-  </Toolbar>
+          {/* RIGHT - DESKTOP BUTTONS OR HAMBURGER */}
+          <div className="header-right">
+            {!isMobile ? (
+              <div className="nav-links">
+                <Button className="booking-button" component={Link} to="/">Home</Button>
+                <Button className="booking-button" component={Link} to="/booking">Booking</Button>
+              </div>
+            ) : (
+              <IconButton onClick={toggleDrawer}>
+                <MenuIcon sx={{ color: '#0D5EA6' }} />
+              </IconButton>
+            )}
+          </div>
+        </Toolbar>
 
-  {/* MOBILE VIEW: Buttons below */}
-  {isMobile && (
-    <Box className="mobile-buttons">
-      <Button className="booking-button" component={Link} to="/" size="small">Home</Button>
-      <Button className="booking-button" component={Link} to="/booking" size="small">Booking</Button>
-    </Box>
-  )}
-</AppBar>
+        {/* MOBILE VIEW: Buttons below */}
+        {isMobile && (
+          <Box className="mobile-buttons">
+            <Button className="booking-button" component={Link} to="/" size="small">Home</Button>
+            <Button className="booking-button" component={Link} to="/booking" size="small">Booking</Button>
+          </Box>
+        )}
+      </AppBar>
 
       {renderMobileDrawer}
     </>
