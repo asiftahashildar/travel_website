@@ -37,7 +37,7 @@ const Home = () => {
         <Grid container spacing={3} justifyContent="center" className="carousel">
           {destinations.map((place, idx) => (
             <Grid item key={idx}>
-              <Card sx={{ width: 280, height: 270, borderRadius: '1rem', boxShadow: 3 }}>
+              <Card sx={{ width: 280, height: 220, borderRadius: '1rem', boxShadow: 3 }}>
                 <CardActionArea>
                   <CardMedia
                     component="img"
@@ -47,7 +47,7 @@ const Home = () => {
                     sx={{ borderTopLeftRadius: '1rem', borderTopRightRadius: '1rem' }}
                   />
                   <CardContent>
-                    <Typography variant="subtitle1" className="card--title" align="center">
+                    <Typography variant="subtitle1" className="card--title" align="center" sx={{ fontFamily: 'Pacifico, cursive', fontSize: '1.4rem' }}>
                       {place.name}
                     </Typography>
                   </CardContent>

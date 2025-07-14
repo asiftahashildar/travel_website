@@ -12,6 +12,7 @@ import {
   Chip,
   Tooltip,
 } from '@mui/material';
+import { Table, TableBody, TableCell, TableRow } from '@mui/material';
 
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
@@ -88,29 +89,63 @@ const VehicleCard = ({ vehicle, distance }) => {
             <Typography variant="body1">{vehicle.description}</Typography>
             <Divider />
 
-            <Stack spacing={1}>
-              <Typography variant="body2">
-                <RouteIcon fontSize="small" /> <strong>Distance:</strong> {distance} KM
-              </Typography>
-              <Typography variant="body2">
-                ₹15/KM: ₹{distance * 15}
-              </Typography>
-              <Typography variant="body2">
-                <strong>Driver & Misc:</strong> ₹{vehicle.baseRent}
-              </Typography>
-              <Typography variant="body2" color="primary" fontWeight={600}>
-                <strong>Total Cost:</strong> ₹{vehicle.totalCost}
-              </Typography>
-            </Stack>
+ <Table size="small" sx={{ mt: 1, fontSize: '0.9rem' }}>
+      <TableBody>
+        <TableRow>
+          <TableCell
+            sx={{ border: 0, py: 0.5, pr: 2, width: '50%' }}
+            align="left"
+          >
+            <Typography variant="body2" component="span">
+              <RouteIcon fontSize="small" sx={{ verticalAlign: 'middle', mr: 0.5 }} />
+              <strong>Distance:</strong>
+            </Typography>
+          </TableCell>
+          <TableCell sx={{ border: 0, py: 0.5 }} align="left">
+            <Typography variant="body2">{distance} KM</Typography>
+          </TableCell>
+        </TableRow>
+
+        <TableRow>
+          <TableCell sx={{ border: 0, py: 0.5 }} align="left">
+            <Typography variant="body2">₹15/KM:</Typography>
+          </TableCell>
+          <TableCell sx={{ border: 0, py: 0.5 }} align="left">
+            <Typography variant="body2">₹{distance * 15}</Typography>
+          </TableCell>
+        </TableRow>
+
+        <TableRow>
+          <TableCell sx={{ border: 0, py: 0.5 }} align="left">
+            <Typography variant="body2"><strong>Driver & Misc:</strong></Typography>
+          </TableCell>
+          <TableCell sx={{ border: 0, py: 0.5 }} align="left">
+            <Typography variant="body2">₹{vehicle.baseRent}</Typography>
+          </TableCell>
+        </TableRow>
+
+        <TableRow>
+          <TableCell sx={{ border: 0, py: 0.5 }} align="left">
+            <Typography variant="body2" color="primary" fontWeight={600}>
+              <strong>Total Cost:</strong>
+            </Typography>
+          </TableCell>
+          <TableCell sx={{ border: 0, py: 0.5 }} align="left">
+            <Typography variant="body2" color="primary" fontWeight={600}>
+              ₹{vehicle.totalCost}
+            </Typography>
+          </TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
 
             <Divider />
 
-            <Typography variant="subtitle1" fontWeight={600}>
+            <Typography variant="subtitle1" fontWeight={600} sx={{ display: 'flex', alignItems: 'center', gap:'3px', color:'#FF3F33' }}>
               <CancelIcon fontSize="small" /> Excludes:
             </Typography>
-            <ul>
+            <ul style={{fontSize: '0.9rem', marginLeft: '1rem'}}>
               <li>Toll Fees</li>
-              <li>State Taxes</li>
               <li>Parking Fees</li>
               <li>Driver Night Charges</li>
             </ul>
