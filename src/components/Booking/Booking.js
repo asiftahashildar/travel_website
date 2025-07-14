@@ -200,7 +200,8 @@ const Booking = () => {
       {tripDetails && (
         <div className="vehicles-list">
           <Typography variant="h6" gutterBottom color="primary" sx={{fontWeight: 700}}>
-            Distance: {tripDetails.distance} KM | Estimated Cost: ₹{tripDetails.totalCostPerKm}
+            Distance: {tripDetails.distance} KM 
+            {/* | Estimated Cost: ₹{tripDetails.totalCostPerKm} */}
           </Typography>
           <Divider sx={{ my: 2 }} />
           <Grid container spacing={2}>
@@ -210,7 +211,7 @@ const Booking = () => {
                   <VehicleCard
                     vehicle={{
                       ...vehicle,
-                      totalCost: tripDetails.totalCostPerKm + vehicle.baseRent
+                      totalCost: (vehicle.rupPerKm * tripDetails.distance) + vehicle.baseRent
                     }}
                     distance={tripDetails.distance}
                   />
