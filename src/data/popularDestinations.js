@@ -1,7 +1,7 @@
-const destinations = [
+const popularDestinations = [
   // Karnataka
   // { name: "Bangalore", image: "/images/banglore2.jpg" },
-  // { name: "Bangalore", image: "/images/banglore1.jpg" },
+  { name: "Bangalore", image: "/images/banglore1.jpg" },
   { name: "Mysore", image: "/images/mysore1.jpg" },
   { name: "Coorg", image: "/images/coorg1.jpg" },
   // { name: "Hampi", image: "/images/hampi.jpg" },
@@ -28,4 +28,4 @@ const destinations = [
   // { name: "Chennai", image: "/images/chennai.jpg" },
 ];
 
-export default destinations;
+export default popularDestinations;

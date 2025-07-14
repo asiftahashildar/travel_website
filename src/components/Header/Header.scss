@@ -19,7 +19,7 @@
 
     .nav-labels {
       display: flex;
-      gap: 1rem;
+      gap: 1.5rem;
       font-size: 0.9rem;
       label {
         font-weight: 800;
@@ -27,7 +27,7 @@
         cursor: pointer;
 
         &:hover {
-          color: #FE4F2D;
+          border-bottom: 2px solid #0D5EA6;
         }
       }
     }
@@ -57,7 +57,6 @@
     justify-content: center;
     gap: 1rem;
     padding: 0.5rem;
-    padding-top: 0;
     background: #fff;
     box-shadow: 0 4px 8px rgba(0,0,0,0.05);
 

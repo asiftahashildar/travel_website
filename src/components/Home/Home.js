@@ -1,5 +1,5 @@
 import React from 'react';
-import destinations from '../../data/destinations';
+import popularDestinations from '../../data/popularDestinations';
 import {
   Box,
   Typography,
@@ -35,7 +35,7 @@ const Home = () => {
           Top Tourist Destinations
         </Typography>
         <Grid container spacing={3} justifyContent="center" className="carousel">
-          {destinations.map((place, idx) => (
+          {popularDestinations.map((place, idx) => (
             <Grid item key={idx}>
               <Card sx={{ width: 280, height: 220, borderRadius: '1rem', boxShadow: 3 }}>
                 <CardActionArea>

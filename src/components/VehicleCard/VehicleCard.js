@@ -59,9 +59,9 @@ const VehicleCard = ({ vehicle, distance }) => {
             </Stack>
             <Button
               size="small"
-              variant="outlined"
+              variant="contained"
               color="primary"
-              startIcon={<InfoIcon />}
+              // startIcon={<InfoIcon />}
               onClick={handleOpen}
             >
               View Details
@@ -111,7 +111,7 @@ const VehicleCard = ({ vehicle, distance }) => {
             <Typography variant="body2">{`₹${vehicle.rupPerKm}/KM:`}</Typography>
           </TableCell>
           <TableCell sx={{ border: 0, py: 0.5 }} align="left">
-            <Typography variant="body2">₹{distance * 15}</Typography>
+            <Typography variant="body2">₹{distance * vehicle.rupPerKm}</Typography>
           </TableCell>
         </TableRow>
 

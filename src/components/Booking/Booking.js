@@ -15,7 +15,6 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import KeyboardReturnIcon from '@mui/icons-material/KeyboardReturn';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
-import DirectionsIcon from '@mui/icons-material/Directions';
 
 import destinations from '../../data/destinations';
 import distances from '../../data/distances';
@@ -27,7 +26,7 @@ const today = new Date().toISOString().split('T')[0];
 
 const Booking = () => {
   const [formData, setFormData] = useState({
-    from: '',
+    from: 'Banglore',
     to: '',
     date: today,
     isRoundTrip: false,
@@ -73,7 +72,7 @@ const Booking = () => {
         <form onSubmit={handleSubmit}>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6}>
-              <TextField
+              {/* <TextField
                 select
                 size="small"
                 fullWidth
@@ -94,7 +93,22 @@ const Booking = () => {
                 {destinations.map((d, idx) => (
                   <MenuItem key={idx} value={d.name}>{d.name}</MenuItem>
                 ))}
-              </TextField>
+              </TextField> */}
+              <TextField
+                size="small"
+                fullWidth
+                label="From"
+                value="Bangalore"
+                variant="outlined"
+                disabled
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <LocationOnIcon color="primary" />
+                    </InputAdornment>
+                  ),
+                }}
+              />
             </Grid>
 
             <Grid item xs={12} sm={6}>
@@ -170,12 +184,15 @@ const Booking = () => {
                   onChange={handleChange}
                   InputLabelProps={{ shrink: true }}
                   variant="outlined"
+                  inputProps={{
+                    min: today
+                  }}
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
                         <KeyboardReturnIcon />
                       </InputAdornment>
-                    )
+                    ),
                   }}
                 />
               </Grid>

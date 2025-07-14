@@ -27,17 +27,17 @@ const vehicles = [
     description: "Ideal for large families."
   },
   {
-    name: "33 Seater Mini Bus",
-    image: "/images/bus9.png",
-    baseRent: 2500,
-    rupPerKm: 40,
-    description: "Best for corporate / group tours."
-  },
-  {
     name: "25 Seater Mini Bus",
     image: "/images/bus9.png",
     baseRent: 2500,
     rupPerKm: 35,
+    description: "Best for corporate / group tours."
+  },
+  {
+    name: "33 Seater Mini Bus",
+    image: "/images/bus9.png",
+    baseRent: 2500,
+    rupPerKm: 40,
     description: "Best for corporate / group tours."
   },
 ];
