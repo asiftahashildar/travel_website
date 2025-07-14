@@ -9,8 +9,13 @@ import {
   CardMedia,
   CardActionArea,
   Paper,
+  Stack,
   Container
 } from '@mui/material';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import PhoneIcon from '@mui/icons-material/Phone';
+import EmailIcon from '@mui/icons-material/Email';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Footer from '../Footer/Footer';
 import './Home.scss';
 
@@ -61,7 +66,7 @@ const Home = () => {
       {/* DETAILS SECTION */}
       <Box className="details--container">
         <Paper className="details-card highlights" elevation={6} id="services">
-          <Typography variant="h5" gutterBottom>Why Choose Us?</Typography>
+          <Typography variant="h5" gutterBottom color="primary">Why Choose Us?</Typography>
           <ul>
             <li>✔ Clean & Sanitized Vehicles</li>
             <li>✔ 24x7 Customer Support</li>
@@ -71,11 +76,25 @@ const Home = () => {
         </Paper>
 
         <Paper className="details-card contact" elevation={6} id="contact">
-          <Typography variant="h5" gutterBottom>Contact Us</Typography>
-          <Typography><strong>Phone:</strong> +91 9876543210</Typography>
-          <Typography><strong>Email:</strong> info@touroperator.com</Typography>
-          <Typography><strong>Office:</strong> Bangalore, Karnataka, India</Typography>
-        </Paper>
+        <Typography variant="h5" gutterBottom color="primary" sx={{ mb: 2 }}>
+          Contact Us
+        </Typography>
+
+        <Stack spacing={2}>
+          <Stack direction="row" alignItems="center" spacing={1}>
+            <PhoneIcon color="action" />
+            <Typography variant="body1"><strong>Phone:</strong> +91 7795516519</Typography>
+          </Stack>
+          <Stack direction="row" alignItems="center" spacing={1}>
+            <EmailIcon color="action" />
+            <Typography variant="body1"><strong>Email:</strong> rajatravels@gmail.com</Typography>
+          </Stack>
+          <Stack direction="row" alignItems="center" spacing={1}>
+            <LocationOnIcon color="action" />
+            <Typography variant="body1"><strong>Office:</strong> Bangalore, Karnataka, India</Typography>
+          </Stack>
+        </Stack>
+      </Paper>
       </Box>
 
       <Footer />

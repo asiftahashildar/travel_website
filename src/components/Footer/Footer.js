@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="container">
-        <p>© 2025 Tour Operator. All rights reserved.</p>
+        <p>©2025, All Rights Reserved, AKT | Powered by AKT</p>
         <p>
           Phone: +91 7795516519 | Email: rajatravels@gmail.com
         </p>

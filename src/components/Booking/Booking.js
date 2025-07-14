@@ -46,15 +46,14 @@ const Booking = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (formData.from && formData.to && formData.from !== formData.to) {
-      let distance = distances[`${formData.from}-${formData.to}`]
-        || distances[`${formData.to}-${formData.from}`]
+      let distance = distances[`Bangalore-${formData.to}`]
+        || distances[`${formData.to}-Bangalore`]
         || 300;
 
       if (formData.isRoundTrip) distance *= 2;
 
       setTripDetails({
         distance,
-        totalCostPerKm: distance * 15
       });
     } else {
       alert("Please select different From and To places.");

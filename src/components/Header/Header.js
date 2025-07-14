@@ -68,7 +68,7 @@ const Header = () => {
         <Toolbar className="toolbar">
           {/* LEFT - LOGO */}
           <Typography className="logo">
-            <img src="/images/logo.png" alt="Logo" width={130} height={60} />
+            <img src="/images/logo.png" alt="Logo" width={150} height={70} />
           </Typography>
 
           {/* CENTER - NAV LABELS (only desktop) */}

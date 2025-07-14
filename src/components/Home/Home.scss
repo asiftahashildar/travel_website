@@ -92,3 +92,40 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+.home {
+    .details--container {
+      padding: 2rem 1rem;
+
+      .details-card {
+        width: 100%;
+        padding: 1.2rem;
+
+        ul li {
+          font-size: 0.85rem;
+        }
+
+        p, li {
+          font-size: 0.85rem;
+        }
+      }
+    }
+
+    .hero {
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+    }
+
+    .destinations-carousel {
+      .section-title {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
