@@ -108,7 +108,7 @@ const VehicleCard = ({ vehicle, distance }) => {
 
         <TableRow>
           <TableCell sx={{ border: 0, py: 0.5 }} align="left">
-            <Typography variant="body2">₹15/KM:</Typography>
+            <Typography variant="body2">{`₹${vehicle.rupPerKm}/KM:`}</Typography>
           </TableCell>
           <TableCell sx={{ border: 0, py: 0.5 }} align="left">
             <Typography variant="body2">₹{distance * 15}</Typography>
