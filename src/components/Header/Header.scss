@@ -69,6 +69,45 @@
     }
   }
 
+    .car-strip-inside-header {
+    position: relative;
+    height: 28px;
+    background-color: #0D5EA6;
+    overflow: hidden;
+
+    .moving-car {
+      position: absolute;
+      font-size: 21px;
+      margin-top: 7px;
+      color: #ffffff;
+      animation: car 9s linear infinite;
+    }
+    .moving-car--2 {
+      position: absolute;
+      font-size: 35px;
+      color: #ffffff;
+      animation: bus 12s linear infinite;
+    }
+  }
+
+  @keyframes car {
+    0% {
+      left: -40px;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+  @keyframes bus {
+    0% {
+      left: -40px;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+
   @media (max-width: 768px) {
     .nav-labels {
       display: none;

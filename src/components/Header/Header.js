@@ -14,7 +14,10 @@ import {
   Box
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import AirportShuttleIcon from '@mui/icons-material/AirportShuttle';
+import { faCarSide } from '@fortawesome/free-solid-svg-icons';
 import './Header.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Header = () => {
   const isMobile = useMediaQuery('(max-width:768px)');
@@ -26,23 +29,19 @@ const Header = () => {
   const scrollToSection = (id) => {
     const scrollAndClose = () => {
       const section = document.getElementById(id);
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
-      }
+      if (section) section.scrollIntoView({ behavior: 'smooth' });
       setDrawerOpen(false);
     };
 
     if (location.pathname !== '/') {
       navigate('/');
-      setTimeout(scrollAndClose, 200); // wait for page load
+      setTimeout(scrollAndClose, 200);
     } else {
       scrollAndClose();
     }
   };
 
-  const toggleDrawer = () => {
-    setDrawerOpen(!drawerOpen);
-  };
+  const toggleDrawer = () => setDrawerOpen(!drawerOpen);
 
   const renderMobileDrawer = (
     <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer}>
@@ -94,8 +93,11 @@ const Header = () => {
             )}
           </div>
         </Toolbar>
+        <Box className="car-strip-inside-header">
+          <AirportShuttleIcon className="moving-car--2" />
+          <FontAwesomeIcon icon={faCarSide} className="moving-car" />
+        </Box>
 
-        {/* MOBILE VIEW: Buttons below */}
         {isMobile && (
           <Box className="mobile-buttons">
             <Button className="booking-button" component={Link} to="/" size="small">Home</Button>
