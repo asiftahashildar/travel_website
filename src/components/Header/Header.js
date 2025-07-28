@@ -15,9 +15,9 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import AirportShuttleIcon from '@mui/icons-material/AirportShuttle';
-import { faCarSide } from '@fortawesome/free-solid-svg-icons';
+// import { faCarSide } from '@fortawesome/free-solid-svg-icons';
 import './Header.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Header = () => {
   const isMobile = useMediaQuery('(max-width:768px)');
@@ -93,10 +93,10 @@ const Header = () => {
             )}
           </div>
         </Toolbar>
-        <Box className="car-strip-inside-header">
+        {/* <Box className="car-strip-inside-header">
           <AirportShuttleIcon className="moving-car--2" />
           <FontAwesomeIcon icon={faCarSide} className="moving-car" />
-        </Box>
+        </Box> */}
 
         {isMobile && (
           <Box className="mobile-buttons">
