@@ -123,8 +123,12 @@
     .toolbar {
       padding: 0.8rem;
 
+
       .logo {
         font-size: 1.3rem;
+        img{
+          margin-left: 5rem !important;
+        }
       }
 
       .nav-labels {
