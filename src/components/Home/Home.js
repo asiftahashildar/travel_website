@@ -31,6 +31,9 @@ const Home = () => {
           <Typography variant="h6" className="hero-subtitle">
             Your Perfect Journey Starts with a Single Click – From City Rides to Weekend Getaways, We’ve Got You Covered.
           </Typography>
+          <Typography variant="h6" className="hero-title footer" style={{ marginTop: '1rem', padding: '0.5rem', backgroundColor: '#fff', color: '#0D5EA6', borderRadius: '0.5rem' }}>
+            Book Now - 7795516519
+          </Typography>
         </Box>
       </Box>
 
